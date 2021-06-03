@@ -4,6 +4,7 @@ const app = express();
 const axios = require("axios");
 const schedule = require("node-schedule");
 const moment = require("moment-jalaali");
+moment.locale("fa");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
