@@ -8,7 +8,7 @@ const moment = require("moment-jalaali");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const sendData = schedule.scheduleJob("* 20 * * *", async function() {
+const sendData = schedule.scheduleJob("*/5 * * * *", async function() {
     const res = await axios.get(process.env.API_URL);
     const date = moment().format("jYYYY/jM/jD HH:mm");
     const price = Number(res.data.data.priceUsd).toFixed(2);
