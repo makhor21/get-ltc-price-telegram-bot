@@ -19,6 +19,10 @@ const sendData = schedule.scheduleJob("* 20 * * *", async function() {
     await axios.post(`${process.env.TELEGRAM_API}/sendMessage`, data);
 });
 
+app.get("/", (req, res) => {
+    res.send(`there's nothing to show :D`);
+});
+
 const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
