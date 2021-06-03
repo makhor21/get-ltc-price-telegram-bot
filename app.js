@@ -9,7 +9,7 @@ moment.loadPersian({ usePersianDigits: false, dialect: "persian-modern" });
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 
-const sendData = schedule.scheduleJob("0 16 * * *", async function() {
+const sendData = schedule.scheduleJob("0 21 * * *", async function() {
     const res = await axios.get(process.env.API_URL);
     const date = moment()
         .utcOffset(+270)
